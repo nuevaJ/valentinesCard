@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fec5bb;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+.happy-valentines {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.3));
+}
+
+.envelope:after {
+  content: "";
+  position: absolute;
+  background-color: #ff9494;
+  width: 440px;
+  height: 330px;
+  left: -10px;
+  top: 45px;
+  z-index: 5;
+}
+
+.valentines-day-card {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  top: 50px;
+  left: 0;
+  background-color: #f8edeb;
+  overflow: hidden;
+  border: 10px solid #fcd5ce;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
+}
+
+.grounds {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fec89a;
+  z-index: 5;
+  top: 230px;
+  left: -20px;
+  box-shadow: 55px 30px #fec89a, 125px 10px #fec89a, 175px 20px #fec89a,
+    250px 10px #fec89a, 320px 5px #fec89a, 380px 10px #fec89a;
+  z-index: 3;
+}
+
+.sunflowerOne {
+  position: absolute;
+  left: 50px;
+  top: 355px;
+  animation: up 4s linear forwards 1s;
+}
+
+.sunflowerOne img {
+  width: 60px;
+}
+
+.sunflowerTwo {
+  position: absolute;
+  left: 270px;
+  top: 350px;
+  animation: upTwo 15s linear infinite;
+}
+
+.sunflowerThree {
+  position: absolute;
+  left: 320px;
+  top: 380px;
+  animation: upTwo 15s linear infinite 3.5s;
+}
+
+.sunflowerFour {
+  position: absolute;
+  left: 150px;
+  top: 400px;
+  animation: upTwo 15s linear infinite 4.5s;
+}
+
+.sunflowerFour img,
+.sunflowerThree img,
+.sunflowerTwo img {
+  width: 45px;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes upTwo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-450px);
+  }
+}
+
+.text {
+  position: absolute;
+  color: #800f2f;
+  font-size: 30px;
+  font-family: "Pacifico", cursive;
+  line-height: 1;
+  text-align: center;
+  width: 380px;
+  left: 10px;
+  z-index: 3;
+  top: 300px;
+  animation: up 1s ease forwards;
+  transition: 0.2s;
+}
+
+.hover {
+  color: white;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+}
+
+.text:hover span {
+  display: none;
+}
+
+.text:hover:before {
+  content: "Hehe bawi na lang ako dito, virtual flowers muna :((";
+  font-size: 25px;
+}
+
+.top {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 218px solid transparent;
+  border-top: 195px solid #f3f1b2;
+  border-bottom: 142px solid transparent;
+  border-left: 222px solid transparent;
+  top: 45px;
+  left: -10px;
+  z-index: 4;
+}
+
+.flip {
+  transform: rotateX(180deg); /* Apply flip transformation */
+  top: -293px;
+}
+
+.right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 190px solid transparent;
+  border-bottom: 142px solid transparent;
+  border-right: 218px solid #fdfcdc;
+  top: 44px;
+  left: 213px;
+  z-index: 4;
+}
+
+.flipRight {
+  transform: rotateY(180deg);
+  left: 430px;
+}
+
+.left {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 218px solid #fdfcdc;
+  border-top: 190px solid transparent;
+  border-bottom: 142px solid transparent;
+  top: 42px;
+  left: -10px;
+  z-index: 4;
+}
+
+.flipLeft {
+  transform: rotateY(-180deg);
+  left: -227px;
+}
+
+.bottom {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 150px solid #f3f1b2;
+  border-right: 222px solid transparent;
+  border-left: 221px solid transparent;
+  top: 224px;
+  left: -11px;
+  z-index: 4;
+}
+
+.flipBottom {
+  transform: rotateX(-180deg);
+  top: 375px;
+}
+
+.click {
+  position: absolute;
+  z-index: 7;
+  top: 180px;
+  left: 160px;
+  transition: opacity 0.5s ease; /* Add transition */
+}
+.click img {
+  width: 100px;
+}
+
+.click.vanished {
+  opacity: 0; /* Set opacity to 0 when vanished class is added */
+}
+
+.kiss-splash {
+  position: absolute;
+  width: 100px; /* Initial width */
+  height: 100px; /* Initial height */
+  z-index: 8;
+  pointer-events: none;
+  /* Add animation */
+  animation: kissSplashAnimation 0.5s forwards;
+}
+
+@keyframes kissSplashAnimation {
+  0% {
+    transform: scale(0); /* Start with no size */
+  }
+  100% {
+    transform: scale(1); /* Grow to full size */
+  }
+}
+
+@keyframes beat {
+  0%,
+  40%,
+  100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  25%,
+  60% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+}
